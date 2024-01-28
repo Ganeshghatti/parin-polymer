@@ -4,8 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      style={{ height: "50vh" }}
-      className="flex flex-col items-center justify-center gap-6 bg-pink"
+      className="flex flex-col items-center justify-center gap-6 bg-pink py-12"
     >
       <h2 className="uppercase text-6xl md:text-5xl text-white font-medium text-center">
         About Us

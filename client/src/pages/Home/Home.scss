@@ -1,14 +1,20 @@
 #HomeBest {
   height: 100vh;
   @media (max-width: 770px) {
-    height: 80vh;
+    height: auto;
   }
 }
 #HomePackaging {
   height: 50vh;
+  @media (max-width: 770px) {
+    height: auto;
+  }
 }
 #HomePackagingExcellence {
   height: 100vh;
+  @media (max-width: 770px) {
+    height: auto;
+  }
 }
 .home-form-label {
   color: #000 !important;
