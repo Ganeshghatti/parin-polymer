@@ -25,6 +25,7 @@ import { useParams } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -59,7 +60,7 @@ export default function Navbar() {
   ) : (
     <nav
       id="navbar"
-      className="absolute w-screen flex flex-col justify-center gap-16 md:gap-0 items-center py-12 z-50 md:justify-between md:overflow-x-hidden md:px-8 left-0 top-0"
+      className="absolute w-screen flex flex-col justify-center md:gap-0 items-center py-12 z-50 md:justify-between md:overflow-x-hidden md:px-8 left-0 top-0 mt-10 gap-2"
     >
       {menu ? (
         <div className="hidden md:block">
@@ -77,8 +78,8 @@ export default function Navbar() {
                 <Link
                   to="/"
                   className={`${
-                    isActiveTab("/") ? "text-blue" : "text-black2"
-                  } hover:text-blue`}
+                    isActiveTab("/") ? "text-pink" : "text-black2"
+                  } hover:text-pink`}
                 >
                   Home
                 </Link>
@@ -87,14 +88,14 @@ export default function Navbar() {
                 <Link
                   to="/#category"
                   className={`${
-                    isActiveTab("/") ? "text-black2" : "text-blue"
-                  } hover:text-blue`}
+                    isActiveTab("/") ? "text-black2" : "text-pink"
+                  } hover:text-pink`}
                 >
                   Categories
                 </Link>
               </li>{" "}
               <li onClick={menuf}>
-                <Link to="/#contact" className="text-black2 hover:text-blue">
+                <Link to="/#contact" className="text-black2 hover:text-pink">
                   Contact
                 </Link>
               </li>
@@ -115,7 +116,7 @@ export default function Navbar() {
                 <div className="flex flex-col items-center" onClick={menuf}>
                   <Link
                     to="/account"
-                    className="hover:text-blue text-black2 flex flex-col items-center"
+                    className="hover:text-pink text-black2 flex flex-col items-center"
                   >
                     <AccountCircleIcon />
                     <p>My Account</p>
@@ -131,7 +132,7 @@ export default function Navbar() {
       ) : (
         ""
       )}
-      <div className="w-full justify-center gap-6 md:gap-0 md:justify-around">
+      <div className="w-full flex justify-center gap-8 md:gap-0 md:justify-around items-center">
         <Link to="/">
           <img src={logo} alt="logo" className="w-40 md:w-24" />
         </Link>
@@ -139,6 +140,8 @@ export default function Navbar() {
           variant="outlined"
           size="small"
           placeholder="Search"
+          className="w-2/5"
+          style={{ color: "black" }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -146,7 +149,7 @@ export default function Navbar() {
               </InputAdornment>
             ),
             sx: {
-              borderRadius: 25, 
+              borderRadius: 25,
             },
           }}
         />
@@ -169,7 +172,7 @@ export default function Navbar() {
             <div className="flex flex-col items-center">
               <Link
                 to="/account"
-                className="hover:text-blue text-black2 flex flex-col items-center"
+                className="hover:text-black text-black2 flex flex-col items-center"
               >
                 <AccountCircleIcon />
                 <p>My Account</p>
@@ -181,41 +184,39 @@ export default function Navbar() {
           </div>
         )}
       </div>
+      <div className="bg-[#F00E88] w-full flex justify-around items-center py-3">
+        <ul
+          className="flex items-center list-none md:hidden text-white"
+          style={{ gap: "2.5vw" }}
+        >
+          <li>
+            <Link
+              to="/"
+            >
+              Home
+            </Link>
+          </li>
 
-      <ul
-        className="flex items-center list-none md:hidden text-black1"
-        style={{ gap: "2.5vw" }}
-      >
-        <li>
-          <Link
-            to="/"
-            className={
-              isActiveTab("/") ? "text-blue font-semibold" : "text-black1"
-            }
-          >
-            Home
-          </Link>
-        </li>
+          <li>
+            <Link
+              to="/#category"
 
-        <li>
-          <Link
-            to="/#category"
-            className={`${
-              isActiveTab("/category")
-                ? "text-blue font-semibold"
-                : "text-black1"
-            } hover:text-blue`}
-          >
-            Categories
-          </Link>
-        </li>
+            >
+              Categories
+            </Link>
+          </li>
 
-        <li>
-          <Link to="/#contact" className="hover:text-blue text-black1">
-            Contact
-          </Link>
-        </li>
-      </ul>
+          <li>
+            <Link to="/#contact" className="hover:text-pink text-white">
+              Contact
+            </Link>
+          </li>
+        </ul>
+        <p className="text-white flex cursor-pointer">
+          <LocationOnIcon style={{ color: "white" }} />
+          Lorem ipsum dolor sit amet
+        </p>
+      </div>
 
       <div className="hidden md:flex md:items-center">
         {menu ? (
