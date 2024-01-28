@@ -60,7 +60,7 @@ export default function Navbar() {
   ) : (
     <nav
       id="navbar"
-      className="absolute w-screen flex flex-col justify-center md:gap-0 items-center py-12 z-50 md:justify-between md:overflow-x-hidden md:px-8 left-0 top-0 mt-10 gap-2"
+      className="absolute w-screen flex flex-col justify-center md:gap-0 items-center py-12 z-50 md:justify-between md:overflow-x-hidden md:px-8 left-0 top-0 mt-8 gap-2"
     >
       {menu ? (
         <div className="hidden md:block">
