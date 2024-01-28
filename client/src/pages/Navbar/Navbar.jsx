@@ -190,26 +190,19 @@ export default function Navbar() {
           style={{ gap: "2.5vw" }}
         >
           <li>
-            <Link
-              to="/"
-            >
-              Home
-            </Link>
+            <Link to="/">HOME</Link>
           </li>
-
           <li>
-            <Link
-              to="/#category"
-
-            >
-              Categories
-            </Link>
+            <Link to="/#about">ABOUT US</Link>
           </li>
-
           <li>
-            <Link to="/#contact" className="hover:text-pink text-white">
-              Contact
-            </Link>
+            <Link to="/#contact">SHOP</Link>
+          </li>{" "}
+          <li>
+            <Link to="/#contact">BULK INQUIRY</Link>
+          </li>{" "}
+          <li>
+            <Link to="/#contact">CONTACT</Link>
           </li>
         </ul>
         <p className="text-white flex cursor-pointer">
