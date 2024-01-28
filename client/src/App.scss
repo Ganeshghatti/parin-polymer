@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap");
+
+.custom-width-15 {
+  width: 15%;
+}
+.custom-width-30 {
+  width: 30%;
+}
+.custom-width-45 {
+  width: 45%;
+}
+.custom-width-55 {
+  width: 55%;
+}
+.custom-width-88 {
+  width: 88%;
+}
+.border-test {
+  border: 2px solid red;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+textarea {
+  resize: none !important;
+}
+
+.button-filled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #ff43bb;
+  color: white;
+}
+.button-outlined {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8.975px;
+  border-radius: 10.77px;
+  border: 0.897px solid #ff43bb;
+  background: white;
+  color: #ff43bb;
+}

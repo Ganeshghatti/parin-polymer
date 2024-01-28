@@ -1,0 +1,21 @@
+#HomeBest {
+  height: 100vh;
+  @media (max-width: 770px) {
+    height: 80vh;
+  }
+}
+#HomePackaging {
+  height: 50vh;
+}
+#HomePackagingExcellence {
+  height: 100vh;
+}
+.home-form-label {
+  color: #000 !important;
+  font-size: 19px !important;
+  margin-bottom: 5px;
+}
+
+#contact .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
