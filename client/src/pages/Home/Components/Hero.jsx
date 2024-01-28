@@ -3,11 +3,11 @@ import React from "react";
 export default function Hero() {
   return (
     <section
-      id="Hero"
+      id="hero"
       className="h-screen w-screen md:h-auto flex md:flex-col justify-center items-center"
     >
       <div className="custom-width-55 md:w-full flex items-center justify-center">
-        <div className="w-11/12 flex items-center justify-center flex-col gap-4 mt-10">
+        <div className="w-11/12 flex items-center justify-center flex-col gap-8 mt-32">
           <h1 className="text-6xl md:text-5xl text-black font-medium">
             <span className="text-8xl md:text-6xl font-extrabold my-2">
               COURIER <span className="text-pink">BAGS</span>

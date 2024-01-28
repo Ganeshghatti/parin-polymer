@@ -140,7 +140,7 @@ export default function Navbar() {
           variant="outlined"
           size="small"
           placeholder="Search"
-          className="w-2/5"
+          className="w-1/3"
           style={{ color: "black" }}
           InputProps={{
             endAdornment: (
