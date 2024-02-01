@@ -1,0 +1,8 @@
+@media (max-width: 867px) {
+  #login {
+    background-image: url("./loginimg.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

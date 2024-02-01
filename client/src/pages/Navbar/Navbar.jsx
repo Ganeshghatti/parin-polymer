@@ -26,6 +26,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -172,10 +173,9 @@ export default function Navbar() {
             <div className="flex flex-col items-center">
               <Link
                 to="/account"
-                className="hover:text-black text-black2 flex flex-col items-center"
+                className="hover:text-black text-black flex flex-col items-center"
               >
-                <AccountCircleIcon />
-                <p>My Account</p>
+                <PermIdentityOutlinedIcon />
               </Link>
             </div>
             <button className="button-outlined" onClick={logoutf}>

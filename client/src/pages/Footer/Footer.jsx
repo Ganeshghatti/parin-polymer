@@ -16,7 +16,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 export default function Footer() {
   const footerdisplay =
     location.pathname === "/login" || location.pathname === "/signup";
-
+    
   const products = useSelector((state) => state.products.products);
 
   useEffect(() => {

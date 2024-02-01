@@ -1,24 +1,25 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
+  username: String,
   email: {
     type: String,
     required: true,
   },
   password: String,
-  isVerified: {
-    type: Boolean,
-    default:false,
-  },
-  createdAt: {
-    type: Date,
-    immutable: true,
-    default: () => Date.now(),
-  },
-  otp: {
+  phone: {
     type: Number,
   },
-  username: String,
+  primary_address: String,
+  secondary_address: String,
+  createdAt: {
+    type: String,
+    immutable: true,
+  },
+  createdOn: {
+    type: String,
+    immutable: true,
+  },
 });
 
-module.exports = mongoose.model("omniscent", UserSchema);
+module.exports = mongoose.model("users", UserSchema);
