@@ -5,7 +5,7 @@ export default function HomePackaging() {
     <img
       src="./assets\Home\HomePackaging.png"
       alt="With custom packaging, elevate your brand!"
-      className="w-full object-cover md:object-contain"
+      className="w-full object-contain"
       id="HomePackaging"
     />
   );

@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       <About />
       <HomeBest />
-      <div className="mt-10 text-center">Products Section here</div>
+      <div className="my-20 text-center text-5xl font-bold">Products here</div>
       <HomePackaging />
       <Inquiry />
       <HomePackagingExcellence />

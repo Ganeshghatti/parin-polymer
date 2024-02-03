@@ -35,7 +35,7 @@ export default function Footer() {
   ) : (
     <footer
       id="footer"
-      className="flex md:flex-col justify-left py-12 md:gap-12 bg-[#FFE5F5] w-full"
+      className="flex md:flex-col justify-left py-12 md:gap-12 bg-blue w-full"
     >
       <div className="w-1/3 flex flex-col items-center md:w-full">
         <div className="flex flex-col md:items-center justify-center gap-4 w-3/5 md:w-4/5">
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
       </div>
       <ul className="text-black flex flex-col custom-width-15 gap-2.5 font-normal md:w-full md:items-center">
-        <p className="text-2xl md:text-xl font-medium text-[#F01089] my-4 uppercase">
+        <p className="text-2xl md:text-xl font-medium text-black my-4 uppercase">
           Company
         </p>
         <li className="md:text-center">
@@ -64,7 +64,7 @@ export default function Footer() {
         </li>
       </ul>
       <ul className="text-black flex flex-col custom-width-15 gap-2.5 font-normal md:w-full md:items-center">
-        <p className="text-2xl md:text-xl font-medium text-[#F01089] my-4 uppercase">
+        <p className="text-2xl md:text-xl font-medium text-black my-4 uppercase">
           Categories
         </p>
         <li className="md:text-center">
@@ -81,7 +81,7 @@ export default function Footer() {
         </li>
       </ul>{" "}
       <ul className="text-black flex flex-col custom-width-15 gap-2.5 font-normal md:w-full md:items-center">
-        <p className="text-2xl md:text-xl font-medium text-[#F01089] my-4 uppercase">
+        <p className="text-2xl md:text-xl font-medium text-black my-4 uppercase">
           Our Policies
         </p>
         <li className="md:text-center">
@@ -95,7 +95,7 @@ export default function Footer() {
         </li>
       </ul>{" "}
       <ul className="text-black flex flex-col custom-width-15 gap-2.5 font-normal md:w-full md:items-center">
-        <p className="text-2xl md:text-xl font-medium text-[#F01089] my-4 uppercase">
+        <p className="text-2xl md:text-xl font-medium text-black my-4 uppercase">
           Get in touch
         </p>
         <li className="md:text-center">

@@ -61,7 +61,7 @@ export default function Navbar() {
   ) : (
     <nav
       id="navbar"
-      className="absolute w-screen flex flex-col justify-center md:gap-0 items-center py-12 z-50 md:justify-between md:overflow-x-hidden md:px-8 left-0 top-0 mt-8 gap-2"
+      className="absolute w-screen flex flex-col justify-center md:gap-0 items-center pt-20 pb-12 z-50 md:justify-between md:overflow-x-hidden md:px-8 left-0 top-0 gap-2"
     >
       {menu ? (
         <div className="hidden md:block">
@@ -79,8 +79,8 @@ export default function Navbar() {
                 <Link
                   to="/"
                   className={`${
-                    isActiveTab("/") ? "text-pink" : "text-black2"
-                  } hover:text-pink`}
+                    isActiveTab("/") ? "text-blue" : "text-black2"
+                  } hover:text-blue`}
                 >
                   Home
                 </Link>
@@ -89,14 +89,14 @@ export default function Navbar() {
                 <Link
                   to="/#category"
                   className={`${
-                    isActiveTab("/") ? "text-black2" : "text-pink"
-                  } hover:text-pink`}
+                    isActiveTab("/") ? "text-black2" : "text-blue"
+                  } hover:text-blue`}
                 >
                   Categories
                 </Link>
               </li>{" "}
               <li onClick={menuf}>
-                <Link to="/#contact" className="text-black2 hover:text-pink">
+                <Link to="/#contact" className="text-black2 hover:text-blue">
                   Contact
                 </Link>
               </li>
@@ -117,7 +117,7 @@ export default function Navbar() {
                 <div className="flex flex-col items-center" onClick={menuf}>
                   <Link
                     to="/account"
-                    className="hover:text-pink text-black2 flex flex-col items-center"
+                    className="hover:text-blue text-black2 flex flex-col items-center"
                   >
                     <AccountCircleIcon />
                     <p>My Account</p>
@@ -133,7 +133,7 @@ export default function Navbar() {
       ) : (
         ""
       )}
-      <div className="w-full flex justify-center gap-8 md:gap-0 md:justify-around items-center">
+      <div className="w-full flex justify-center gap-8 md:gap-0 md:justify-around items-center pb-2 mt-16">
         <Link to="/">
           <img src={logo} alt="logo" className="w-40 md:w-24" />
         </Link>
@@ -184,9 +184,9 @@ export default function Navbar() {
           </div>
         )}
       </div>
-      <div className="bg-[#F00E88] w-full flex justify-around items-center py-3">
+      <div className="bg-darkblue w-full flex justify-around items-center py-3">
         <ul
-          className="flex items-center list-none md:hidden text-white"
+          className="flex items-center list-none md:hidden text-white text-base"
           style={{ gap: "2.5vw" }}
         >
           <li>

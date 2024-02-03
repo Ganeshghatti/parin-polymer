@@ -109,8 +109,8 @@ const Inquiry = () => {
       {" "}
       {loading && <Spinnerf />}
       <Stack spacing={2}>{alert}</Stack>
-      <div className="w-3/4 flex flex-col gap-8 bg-pinkbg rounded-3xl p-16 md:w-11/12 md:p-6">
-        <h2 className="uppercase text-6xl md:text-5xl text-white font-medium text-center">
+      <div className="w-3/4 flex flex-col gap-8 bg-blue rounded-3xl p-16 md:w-11/12 md:p-6">
+        <h2 className="uppercase text-6xl md:text-5xlfont-medium text-center">
           BULK INQUIRY
         </h2>
 

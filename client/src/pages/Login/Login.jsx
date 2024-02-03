@@ -150,7 +150,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="bg-pink border-1 border-solid border-pink text-white rounded w-full py-3"
+            className="bg-blue border-1 border-solid border-blue text-white rounded w-full py-3"
           >
             Login
           </button>
