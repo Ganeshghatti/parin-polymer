@@ -98,7 +98,7 @@ const Signup = () => {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:5000/user/register",
+        "https://parin-polymer-server.vercel.app/user/register",
         formData
       );
       console.log(response);
