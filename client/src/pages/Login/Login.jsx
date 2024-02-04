@@ -22,7 +22,6 @@ import Spinnerf from "../../Components/Spinnerf";
 import { Stack } from "@mui/material";
 import Alert from "@mui/material/Alert";
 import { Link } from "react-router-dom";
-import loginimg from "./loginimg.jpeg";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -44,7 +43,7 @@ const Login = () => {
   });
 
   const handleChange = (e) => {
-    const { name, value, checked } = e.target
+    const { name, value, checked } = e.target;
 
     if (name === "rememberMe") {
       setRememberMe(checked);
@@ -84,7 +83,7 @@ const Login = () => {
       navigate(`/`);
       setLoading(false);
     } catch (error) {
-      console.log(error)
+      console.log(error);
       setLoading(false);
       setAlert(
         <Alert
@@ -150,11 +149,11 @@ const Login = () => {
 
           <button
             type="submit"
-            className="bg-blue border-1 border-solid border-blue text-white rounded w-full py-3"
+            className="bg-darkblue border-1 border-solid border-blue text-white rounded w-full py-3"
           >
             Login
           </button>
-          <p className="self-center text-center text-bluepurple font-light text-base md:text-sm">
+          <p className="self-center text-center text-darkblue font-light text-base md:text-sm">
             Don't have an Account ?
             <Link to="/signup" className="text-navyblue font-bold text-base">
               Create Account
@@ -162,7 +161,9 @@ const Login = () => {
           </p>
         </form>
       </div>{" "}
-      <img src={loginimg} className="w-1/2 md:hidden object-cover" />
+      <div className="bg-darkblue flex items-center justify-center w-1/2">
+        <img src="./assets\Home\Hero.png" className="object-contain" />
+      </div>{" "}
     </section>
   );
 };

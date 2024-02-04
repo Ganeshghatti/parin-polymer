@@ -25,7 +25,6 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Spinnerf from "../../Components/Spinnerf";
 import { Stack } from "@mui/material";
 import Alert from "@mui/material/Alert";
-import signupimg from "./signupimg.png";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -137,7 +136,9 @@ const Signup = () => {
     <section className="w-screen h-screen flex justify-center" id="signup">
       {loading && <Spinnerf />}
       <Stack spacing={2}>{alert}</Stack>
-      <img src={signupimg} className="w-1/2 md:hidden object-cover" />
+      <div className="bg-darkblue flex items-center justify-center w-1/2">
+        <img src="./assets\Home\Hero.png" className="object-contain" />
+      </div>
       <div className="flex flex-col justify-center items-center w-1/2 md:w-full ">
         <form
           onSubmit={handleSubmit}
@@ -280,12 +281,12 @@ const Signup = () => {
             </div>
           </div>
           <button
-            className="bg-pink border-1 border-solid border-blue text-white rounded w-full py-3"
+            className="bg-darkblue border-1 border-solid border-darkblue text-white rounded w-full py-3"
             type="submit"
           >
             Sign up
           </button>
-          <p className="self-center text-bluepurple font-light text-base md:text-sm">
+          <p className="self-center text-darkblue font-light text-base md:text-sm">
             Already have an Account ?
             <Link to="/login" className=" text-navyblue font-bold text-base">
               Login
