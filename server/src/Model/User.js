@@ -12,6 +12,7 @@ const UserSchema = new mongoose.Schema({
   },
   primary_address: String,
   secondary_address: String,
+  pincode: Number,
   createdAt: {
     type: String,
     immutable: true,
@@ -19,6 +20,10 @@ const UserSchema = new mongoose.Schema({
   createdOn: {
     type: String,
     immutable: true,
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false,
   },
 });
 

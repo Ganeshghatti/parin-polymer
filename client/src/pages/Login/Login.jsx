@@ -70,6 +70,7 @@ const Login = () => {
         email: response.data.email,
         username: response.data.username,
         token: response.data.token,
+        isAdmin:response.data.isAdmin
       };
 
       localStorage.setItem("user", JSON.stringify(user));
@@ -78,6 +79,7 @@ const Login = () => {
           email: user.email,
           username: user.username,
           token: user.token,
+          isAdmin:user.isAdmin
         })
       );
       navigate(`/`);

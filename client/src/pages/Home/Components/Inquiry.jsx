@@ -71,7 +71,7 @@ const Inquiry = () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://beliverz-user-server.vercel.app/user/form",
+        "http://localhost:5000/user/form",
         formData
       );
       setAlert(

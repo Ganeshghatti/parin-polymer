@@ -26,7 +26,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
+import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -42,7 +42,12 @@ export default function Navbar() {
     window.location.href = "/";
   };
   const navbardisplay =
-    location.pathname === "/login" || location.pathname === "/signup";
+    location.pathname === "/login" ||
+    location.pathname === "/signup" ||
+    location.pathname === "/admin/dashboard" ||
+    location.pathname === "/admin/products" ||
+    location.pathname === "/admin/sales" ||
+    location.pathname === "/admin/form";
 
   const menuf = () => {
     setmenu(!menu);
@@ -178,7 +183,10 @@ export default function Navbar() {
                 <PermIdentityOutlinedIcon />
               </Link>
             </div>
-            <button className="button-outlined" onClick={logoutf}>
+            <button
+              className="button-outlined px-10 py-2 text-lg md:text-base"
+              onClick={logoutf}
+            >
               Logout
             </button>
           </div>

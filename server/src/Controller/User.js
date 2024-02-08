@@ -1,6 +1,6 @@
 const userModel = require("../Model/User");
 const formModel = require("../Model/Form");
-// const productModel = require("../../../Model/Form");
+const productModel = require("../Model/Product");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -58,10 +58,8 @@ exports.register = async (req, res, next) => {
     res.status(200).json({
       username: newUser.username,
       email: newUser.email,
-      phone: newUser.phone,
-      primary_address: newUser.primary_address,
-      secondary_address: newUser.secondary_address,
       token: token,
+      isAdmin: newUser.isAdmin,
     });
   } catch (error) {
     console.error("Error:", error.message);
@@ -98,6 +96,7 @@ exports.login = async (req, res, next) => {
       email: existingUser.email,
       username: existingUser.username,
       token: jwttoken,
+      isAdmin: existingUser.isAdmin,
     });
   } catch (error) {
     console.log(error);
@@ -105,25 +104,11 @@ exports.login = async (req, res, next) => {
   }
 };
 
-exports.GetAllProductNames = async (req, res, next) => {
+exports.GetAllProducts = async (req, res, next) => {
   try {
-    const allcourses = await courseModel.find();
+    const allproducts = await productModel.find();
 
-    const simplifiedCourses = allcourses.map((course) => ({
-      courseName: course.courseName || null,
-      courseId: course.courseId || null,
-      coursethumbnail: course.thumbnail || null,
-      coursepayment: course.payment || null,
-      courseamountInINR: course.amountInINR || null,
-      coursetotalEnrollments: course.courseInfo
-        ? course.courseInfo.totalEnrollments || null
-        : null,
-      coursetags: course.courseDetail ? course.courseDetail.tags || null : null,
-      courserating: course.rating || null,
-      courselanguage: course.language || null,
-    }));
-
-    res.status(200).json({ courses: simplifiedCourses });
+    res.status(200).json({ products: allproducts });
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Oops! Please try again later" });
@@ -132,7 +117,17 @@ exports.GetAllProductNames = async (req, res, next) => {
 
 exports.postForm = async (req, res, next) => {
   try {
-    const { email, phone, name, query } = req.body;
+    const {
+      firstName,
+      lastName,
+      email,
+      phone,
+      companyName,
+      companyGST,
+      productName,
+      productQuantity,
+      message,
+    } = req.body;
 
     if (!validator.isMobilePhone(phone)) {
       return res
@@ -143,10 +138,15 @@ exports.postForm = async (req, res, next) => {
     const form = new formModel({
       date: moment().add(10, "days").calendar(),
       time: moment().format("LT"),
+      firstName,
+      lastName,
       email,
       phone,
-      name,
-      query,
+      companyName,
+      companyGST,
+      productName,
+      productQuantity,
+      message,
     });
 
     await form.save();
@@ -170,17 +170,41 @@ exports.MyAccount = async (req, res, next) => {
       return res.status(404).json({ error: "User not found" });
     }
 
-    for (const item of user.coursesEnrolled) {
-      const course = await courseModel.findOne({ courseId: item.courseId });
+    // for (const item of user.coursesEnrolled) {
+    //   const course = await courseModel.findOne({ courseId: item.courseId });
 
-      if (course) {
-        item.courseName = course.courseName;
-        item.thumbnail = course.thumbnail;
-      } else {
-        console.error(`Course not found for courseId: ${item.courseId}`);
-      }
+    //   if (course) {
+    //     item.courseName = course.courseName;
+    //     item.thumbnail = course.thumbnail;
+    //   } else {
+    //     console.error(`Course not found for courseId: ${item.courseId}`);
+    //   }
+    // }
+
+    res.status(200).json({ user });
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+exports.UpdateAccount = async (req, res, next) => {
+  const { email } = req.params;
+  const updatedDetails = req.body;
+
+  try {
+    const user = await userModel.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
     }
 
+    user.username = updatedDetails.username;
+    user.phone = updatedDetails.phone;
+    user.primary_address = updatedDetails.primary_address;
+    user.secondary_address = updatedDetails.secondary_address;
+    user.pincode = updatedDetails.pincode;
+
+    await user.save();
     res.status(200).json({ user });
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });

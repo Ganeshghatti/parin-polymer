@@ -6,6 +6,7 @@ import HomeBest from "./Components/HomeBest";
 import HomePackaging from "./Components/HomePackaging";
 import Inquiry from "./Components/Inquiry";
 import HomePackagingExcellence from "./Components/HomePackagingExcellence";
+import Products from "./Components/Products";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <Hero />
       <About />
       <HomeBest />
-      <div className="my-20 text-center text-5xl font-bold">Products here</div>
+      <Products />
       <HomePackaging />
       <Inquiry />
       <HomePackagingExcellence />

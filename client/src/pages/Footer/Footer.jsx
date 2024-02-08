@@ -15,8 +15,13 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 export default function Footer() {
   const footerdisplay =
-    location.pathname === "/login" || location.pathname === "/signup";
-    
+    location.pathname === "/login" ||
+    location.pathname === "/signup" ||
+    location.pathname === "/admin/dashboard" ||
+    location.pathname === "/admin/products" ||
+    location.pathname === "/admin/sales" ||
+    location.pathname === "/admin/form";
+
   const products = useSelector((state) => state.products.products);
 
   useEffect(() => {
